@@ -6,4 +6,4 @@ My repository for class CART253
 Homework
 1. Prototyping: website
 
-   [Reflective Journal](https://drbdgyyrg.github.io/CART253/topics/Prototype-website/journal.md)
+   [Reflective Journal](./journal.md)
