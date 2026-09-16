@@ -1,0 +1,8 @@
+# Reflective Journal
+
+At the beginning, I felt this assignment was surprisingly difficult, because I had no clue where to start with no knowledge of Markdown. Later on, I did quite a lot of research with **ChatGPT** and **Youtube**; by doing so I gradually built up confidence. Now I know how those texts and images on the websites were built. In addition, I learned how to create ***headings, bold and italic fonts, blockqoutes, lists***, as well as how to insert ***images*** and ***links***. These are piles of information; I need some practices and time to absorb it. 
+
+I hope to use the **Markdown** language that I learned on more future assignments and projects in this class, as well as on other personal projects. For example, I am a digital artist; I may use this technique to build my own portfolio showcase website instead of using [Artstation](https://obsidiansamurai.artstation.com/) right now.
+
+The following screenshot is my artstation website right now.
+![The screenshot of my Artstation](https://drbdgyyrg.github.io/CART253/topics/Prototype-website/image/artstation-screenshot.jpg)
