@@ -1,8 +1,8 @@
 /**
- * soccer field abstract
- * Runzhuo Zhang
+ * soccerfield 02
+ * Runzhuo zhang
  * 
- * abstract
+ * abstract prototype
  * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
  */
 
@@ -12,7 +12,9 @@
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
-createCanvas(900, 604);
+    createCanvas(900, 604);
+
+
 }
 
 
@@ -20,7 +22,7 @@ createCanvas(900, 604);
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-background(200);
+    background(200);
 
     push();
     fill(150, 220, 150);
