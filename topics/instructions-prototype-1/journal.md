@@ -2,7 +2,7 @@
 
 Runzhuo Zhang
 
-[View this project online](URL_FOR_THE_RUNNING_PROJECT)
+[View this project online](https://drbdgyyrg.github.io/CART253/topics/instructions-prototype-1/)
 
 ## Reflective Journal
 
