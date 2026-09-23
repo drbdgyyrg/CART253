@@ -10,4 +10,8 @@ Homework
 
 2. Prototyping: instruction-1
 
-   [Reflective Journal](journal_instructions_prototype_1.md)
+   [Reflective Journal](./journal_instructions_prototype_1.md)
+
+3. Prototyping: instruction-2
+   
+   [Reflective Journal](journal_instructions_prototype_2.md)
