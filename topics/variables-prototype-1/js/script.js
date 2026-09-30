@@ -1,5 +1,5 @@
 /**
- * soccer field variable 01
+ * soccer field variable 01 color changing
  * Runzhuo Zhang
  * 
  * variable 01 homework
