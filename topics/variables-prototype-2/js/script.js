@@ -1,8 +1,8 @@
 /**
- * soccer field variable 01
+ * soccer field variable 02 passing the ball
  * Runzhuo Zhang
  * 
- * variable 01 homework
+ * variable 02 homework
  */
 
 "use strict";
@@ -34,8 +34,8 @@ background(200);
     push();
     fill(lighterGrass.R, lighterGrass.G, lighterGrass.B);
     //turn the color of the grass lighter and yellower
-    lighterGrass.R = lighterGrass.R + 1;
-    lighterGrass.R = constrain(lighterGrass.R, 150, 210);
+    //lighterGrass.R = lighterGrass.R + 1;
+    //lighterGrass.R = constrain(lighterGrass.R, 150, 210);
     stroke(255);
     strokeWeight(2);
     rect(30,30, 840, 544);
@@ -45,6 +45,8 @@ background(200);
     drawcircle();
     drawlines();
     drawspots();
+    drawPlayers();
+    drawBall();
 }
 function drawspots(){
     push();
@@ -109,9 +111,9 @@ function drawDarkGreenGrass(){
     push();
     fill(darkerGrass.R, darkerGrass.G, darkerGrass.B);
     //turn the color of the grass darker and yellower
-    darkerGrass.R = darkerGrass.R + 1;
-    darkerGrass.R = constrain(darkerGrass.R, 113, 188);
-    darkerGrass.B = darkerGrass.B - 0.2;
+    //darkerGrass.R = darkerGrass.R + 1;
+    //darkerGrass.R = constrain(darkerGrass.R, 113, 188);
+    //darkerGrass.B = darkerGrass.B - 0.2;
     darkerGrass.B = constrain(darkerGrass.B, 114, 130);
     noStroke();
     rect(56,32, 50.25, 540);
@@ -126,4 +128,19 @@ function drawDarkGreenGrass(){
     //rect(32,357,836,109);
     pop();
 }
-
+function drawPlayers(){
+    push();
+    fill(0,0,255);
+    noStroke();
+    ellipse(700, 200, 20,20);
+    ellipse(700, 350, 20,20);
+    
+    pop();
+}
+function drawBall(){
+    push();
+    fill(255,0,0);
+    noStroke();
+    circle(700, 302, 10);
+    pop();
+}
