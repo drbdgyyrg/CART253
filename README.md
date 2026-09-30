@@ -19,3 +19,6 @@ Homework
 4. Prototyping: instruction-3
    
    [Reflictive Journal](./journal_instructions_prototype_3.md)
+
+5. Prototyping: Variables
+   [Reflictive Journal](./journal_variables_prototype.md)
