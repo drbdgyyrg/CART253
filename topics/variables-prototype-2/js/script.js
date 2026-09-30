@@ -20,6 +20,11 @@ let lighterGrass = {
     G: 220,
     B: 150
 }
+let ball = {
+    x: 510,
+    y: 110,
+    size: 10
+}
 function setup() {
 createCanvas(900, 604);
 }
@@ -132,7 +137,7 @@ function drawPlayers(){
     push();
     fill(0,0,255);
     noStroke();
-    ellipse(700, 200, 20,20);
+    ellipse(500, 100, 20,20);
     ellipse(700, 350, 20,20);
     
     pop();
@@ -141,6 +146,10 @@ function drawBall(){
     push();
     fill(255,0,0);
     noStroke();
-    circle(700, 302, 10);
+    circle(ball.x, ball.y, ball.size);
+    ball.y = ball.y + 3;
+    ball.y = constrain(ball.y, 110, 340);
+    ball.x = ball.x + 2.5;
+    ball.x = constrain(ball.x, 510, 700);
     pop();
 }
