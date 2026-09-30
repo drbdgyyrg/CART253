@@ -10,6 +10,16 @@
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
+let darkerGrass = {
+    R: 113,
+    G: 210,
+    B: 130
+}
+let lighterGrass = {
+    R: 150,
+    G: 220,
+    B: 150
+}
 function setup() {
 createCanvas(900, 604);
 }
@@ -22,7 +32,10 @@ function draw() {
 background(200);
 
     push();
-    fill(150, 220, 150);
+    fill(lighterGrass.R, lighterGrass.G, lighterGrass.B);
+    //turn the color of the grass lighter and yellower
+    lighterGrass.R = lighterGrass.R + 1;
+    lighterGrass.R = constrain(lighterGrass.R, 150, 210);
     stroke(255);
     strokeWeight(2);
     rect(30,30, 840, 544);
@@ -44,7 +57,7 @@ function drawspots(){
 }
 function drawarc(){
     push();
-    fill(150, 220, 150);
+    fill(lighterGrass.R, lighterGrass.G, lighterGrass.B);
     stroke(255);
     strokeWeight(2);
     arc(120, 302, 146.4, 146.4, radians(305), radians(55));
@@ -57,7 +70,7 @@ function drawarc(){
 }
 function drawcircle(){
     push();
-    fill(150, 220, 150);
+    fill(lighterGrass.R, lighterGrass.G, lighterGrass.B);
     stroke(255);
     strokeWeight(2);
     ellipse(450, 302, 146.4, 146.4);
@@ -94,7 +107,12 @@ function drawlines(){
 }
 function drawDarkGreenGrass(){
     push();
-    fill(113, 210, 130);
+    fill(darkerGrass.R, darkerGrass.G, darkerGrass.B);
+    //turn the color of the grass darker and yellower
+    darkerGrass.R = darkerGrass.R + 1;
+    darkerGrass.R = constrain(darkerGrass.R, 113, 188);
+    darkerGrass.B = darkerGrass.B - 0.2;
+    darkerGrass.B = constrain(darkerGrass.B, 114, 130);
     noStroke();
     rect(56,32, 50.25, 540);
     rect(161,32, 50.25, 540);
@@ -108,3 +126,4 @@ function drawDarkGreenGrass(){
     //rect(32,357,836,109);
     pop();
 }
+
