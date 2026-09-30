@@ -21,8 +21,8 @@ let lighterGrass = {
     B: 150
 }
 let ball = {
-    x: 510,
-    y: 110,
+    x: 710,
+    y: 350,
     size: 10
 }
 function setup() {
@@ -147,9 +147,10 @@ function drawBall(){
     fill(255,0,0);
     noStroke();
     circle(ball.x, ball.y, ball.size);
-    //ball.y = ball.y + 3;
-    //ball.y = constrain(ball.y, 110, 340);
-    //ball.x = ball.x + 2.5;
-    //ball.x = constrain(ball.x, 510, 700);
+    //shoot the ball into the goal
+    ball.y = ball.y - 2;
+    ball.y = constrain(ball.y, 277, 340);
+    ball.x = ball.x + 5;
+    ball.x = constrain(ball.x, 510, width-20);
     pop();
 }
