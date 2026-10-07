@@ -29,7 +29,7 @@ let creature = {
         neutral:"#12e440"
 
     },
-    currentFull:"#12e440"
+    currentFill:"#12e440"
 
 }
 function setup() {
