@@ -169,13 +169,24 @@ function drawBall(){
 function moveBall(){
     //let distance = dist(player1.x, player1.y, ball.x, ball.y);
     console.log(distance)
-    ball.x = ball.x + ball.speedX;
-    ball.y = ball.y + ball.speedY;
-    if (ball.x >= player2.x + player2.size/2){
+    
+    if (ball.x >= player2.x - player2.size/2){
         ball.x = ball.x - ball.speedX;
+        ball.speedX = -ball.speedX;
         //ball.x = constrain(ball.x, 600, 685);
         ball.y = ball.y - ball.speedY;
+        ball.speedY = -ball.speedY;
         //ball.y = constrain(ball.y, 110, 340);
+    }
+    else if (ball.x <= player1.x + player1.size/2){
+        ball.x = ball.x + ball.speedX;
+        ball.speedX = ball.speedX;
+        ball.y = ball.y + ball.speedY;
+        ball.speedY = ball.speedY;
+    }
+    else {
+        ball.x = ball.x + ball.speedX;
+        ball.y = ball.y + ball.speedY;
     }
 
 }
