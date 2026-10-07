@@ -24,20 +24,21 @@ let ball = {
     x: 870,
     y: 30,
     size: 10,
-    speedX: 5,
-    speedY: -2
+    speedX: 0.6,
+    speedY: 3.5
 }
 let player1 = {
-    x: 600,
-    y: 100,
+    x: 880,
+    y: 25,
     size: 20,
     fillColor: "#0000ff"
 }
 let player2 = {
-    x: 820,
+    x: 790,
     y: 305,
     size: 20,
-    fillColor: "#0000ff"
+    fillColor: "#0000ff",
+    speedX: 0.3
 }
 function setup() {
 createCanvas(900, 604);
@@ -168,15 +169,29 @@ function drawBall(){
     }
     
 function movePlayer2(){
-    //player2.x = player2.x + 0.4;
+    let distance = dist(player2.x, player2.y, ball.x, ball.y);
+
+    player2.x = player2.x + player2.speedX;
+    if (distance < 10){
+        player2.speedX = 0;
+    }
     
 
 }
 function moveBall(){
-    //let distance = dist(player1.x, player1.y, ball.x, ball.y);
-    console.log(distance)
-    //ball.x = ball.x + ball.speedX;
+    let distance = dist(player2.x, player2.y, ball.x, ball.y);
+    //console.log(distance)
+    //ball.x = ball.x - ball.speedX;
     //ball.y = ball.y + ball.speedY;
+    if (distance < 10){
+        ball.x = ball.x + 50;
+        //ball.speedX = 1
+        ball.speedY = 0
+    }
     
+    else{
+    ball.x = ball.x - ball.speedX;
+    ball.y = ball.y + ball.speedY;    
+    }
 
 }
