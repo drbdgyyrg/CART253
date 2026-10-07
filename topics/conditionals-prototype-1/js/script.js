@@ -167,26 +167,32 @@ function drawBall(){
     
 
 function moveBall(){
-    //let distance = dist(player1.x, player1.y, ball.x, ball.y);
-    console.log(distance)
-    
-    if (ball.x >= player2.x - player2.size/2){
-        ball.x = ball.x - ball.speedX;
-        ball.speedX = -ball.speedX;
-        //ball.x = constrain(ball.x, 600, 685);
-        ball.y = ball.y - ball.speedY;
-        ball.speedY = -ball.speedY;
-        //ball.y = constrain(ball.y, 110, 340);
+    let distance = dist(player1.x, player1.y, ball.x, ball.y);
+    let distance2 = dist(player2.x, player2.y, ball.x, ball.y);
+    console.log(distance, distance2);
+    //reach player2
+    if (distance2 <= player2.size/4){
+        ball.speedX = ball.speedX*-1;
+        ball.speedY = ball.speedY*-1;
+        // ball.x = ball.x - ball.speedX;
+        // ball.speedX = -ball.speedX;
+        // //ball.x = constrain(ball.x, 600, 685);
+        // ball.y = ball.y - ball.speedY;
+        // ball.speedY = -ball.speedY;
+        // //ball.y = constrain(ball.y, 110, 340);
     }
-    else if (ball.x <= player1.x + player1.size/2){
-        ball.x = ball.x + ball.speedX;
-        ball.speedX = ball.speedX;
-        ball.y = ball.y + ball.speedY;
-        ball.speedY = ball.speedY;
+    //reach player1
+    else if (distance <= player1.size/4){
+        ball.speedX = ball.speedX*-1;
+        ball.speedY = ball.speedY*-1;
+        // ball.x = ball.x + ball.speedX;
+        // ball.speedX = ball.speedX;
+        // ball.y = ball.y + ball.speedY;
+        // ball.speedY = ball.speedY;
     }
     else {
-        ball.x = ball.x + ball.speedX;
-        ball.y = ball.y + ball.speedY;
+        
     }
-
+ball.x = ball.x + ball.speedX;
+        ball.y = ball.y + ball.speedY;
 }
