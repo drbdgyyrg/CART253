@@ -25,7 +25,8 @@ let ball = {
     y: 30,
     size: 10,
     speedX: 0.6,
-    speedY: 3.5
+    speedY: 3.5,
+    moveTorwardsGoal: false,
 }
 let player1 = {
     x: 880,
@@ -183,8 +184,10 @@ function moveBall(){
     //console.log(distance)
     //ball.x = ball.x - ball.speedX;
     //ball.y = ball.y + ball.speedY;
-    if (distance < 10){
-        ball.x = ball.x + 50;
+    if (ball.moveTorwardsGoal === false){
+        if (distance < 10){
+            ball.moveTorwardsGoal = true;
+        ball.x = ball.x + 20;
         //ball.speedX = 1
         ball.speedY = 0
     }
@@ -193,5 +196,14 @@ function moveBall(){
     ball.x = ball.x - ball.speedX;
     ball.y = ball.y + ball.speedY;    
     }
+
+    }
+    if (ball.moveTorwardsGoal === true){
+        ball.x = ball.x + 20;
+        ball.x = constrain(ball.x, 0, width-20);
+
+    }   
+
+    
 
 }
