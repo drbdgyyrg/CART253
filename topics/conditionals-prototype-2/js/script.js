@@ -25,7 +25,8 @@ let ball = {
     y: 350,
     size: 10,
     speedX: 5,
-    speedY: -2
+    speedY: -2,
+    moving: false
 }
 let player1 = {
     x: 600,
@@ -37,7 +38,9 @@ let player2 = {
     x: 710,
     y: 350,
     size: 20,
-    fillColor: "#0000ff"
+    fillColor: "#0000ff",
+    speedX: 1,
+    speedY: 1
 }
 function setup() {
 createCanvas(900, 604);
@@ -168,22 +171,38 @@ function drawBall(){
     }
     
 function movePlayer2(){
-    player2.x = player2.x + 1;
-    if (player2.x >= 880){
-        player2.x = player2.x - 1;
+    
+    if (player2.x >= 800){
+        player2.speedX = 0;
+    }
+    else{
+        player2.x = player2.x + player2.speedX;
     }
 
 }
 function moveBall(){
     //let distance = dist(player1.x, player1.y, ball.x, ball.y);
-    console.log(distance)
-    ball.x = ball.x + ball.speedX;
-    ball.y = ball.y + ball.speedY;
-    if (ball.x >= player2.x + player2.size/2){
-        ball.x = ball.x - ball.speedX;
-        //ball.x = constrain(ball.x, 600, 685);
-        ball.y = ball.y - ball.speedY;
-        //ball.y = constrain(ball.y, 110, 340);
+    //console.log(ball.x)
+    //ball.x = ball.x + ball.speedX;
+    //ball.y = ball.y + ball.speedY;
+    if (player2.x >= ball.x ){
+        if(ball.moving === false){
+            ball.moving = true;
+            ball.speedX = 5;
+            ball.speedY = -2;
+            
+        }
+    else if (ball.moving === false){
+        ball.speedX = 0;
+        ball.speedY = 0;
     }
-
+    }
+        console.log(ball.y)
+    if (ball.moving === true){    
+        ball.x = ball.x + ball.speedX;
+        ball.x = constrain(ball.x, 600, width-20);
+        ball.y = ball.y + ball.speedY;
+        ball.y = constrain(ball.y, 310, 604);
+    }
+    
 }
