@@ -14,7 +14,10 @@ Homework
    [Reflective Journal](./journal_instructions_prototype_2.md)
 
 4. Prototyping: instruction-3
-   [Reflictive Journal](./journal_instructions_prototype_3.md)
+   [Reflective Journal](./journal_instructions_prototype_3.md)
 
 5. Prototyping: Variables
-   [Reflictive Journal](./journal_variables_prototype.md)
+   [Reflective Journal](./journal_variables_prototype.md)
+
+6. Prototyping: Conditionals
+   [Reflective Journal](./journal_conditionals_prototype.md)
