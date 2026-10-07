@@ -21,9 +21,23 @@ let lighterGrass = {
     B: 150
 }
 let ball = {
-    x: 510,
+    x: 600,
     y: 110,
-    size: 10
+    size: 10,
+    speedX: 1,
+    speedY: 3
+}
+let player1 = {
+    x: 600,
+    y: 100,
+    size: 20,
+    fillColor: "#0000ff"
+}
+let player2 = {
+    x: 685,
+    y: 350,
+    size: 20,
+    fillColor: "#0000ff"
 }
 function setup() {
 createCanvas(900, 604);
@@ -45,15 +59,17 @@ background(200);
     strokeWeight(2);
     rect(30,30, 840, 544);
     pop();
-    drawarc();
+    drawArc();
     drawDarkGreenGrass();
-    drawcircle();
-    drawlines();
-    drawspots();
+    drawCircle();
+    drawLines();
+    drawSpots();
     drawPlayers();
     drawBall();
+//move the ball
+    moveBall();
 }
-function drawspots(){
+function drawSpots(){
     push();
     fill(255);
     noStroke();
@@ -62,7 +78,7 @@ function drawspots(){
     circle(450, 302, 5);
     pop();
 }
-function drawarc(){
+function drawArc(){
     push();
     fill(lighterGrass.R, lighterGrass.G, lighterGrass.B);
     stroke(255);
@@ -75,7 +91,7 @@ function drawarc(){
     arc(870,574, 20,20, radians(180), radians(270));
     pop();
 }
-function drawcircle(){
+function drawCircle(){
     push();
     fill(lighterGrass.R, lighterGrass.G, lighterGrass.B);
     stroke(255);
@@ -83,7 +99,7 @@ function drawcircle(){
     ellipse(450, 302, 146.4, 146.4);
     pop();
 }
-function drawlines(){
+function drawLines(){
     push();
     stroke(255);
     strokeWeight(2);
@@ -135,11 +151,10 @@ function drawDarkGreenGrass(){
 }
 function drawPlayers(){
     push();
-    fill(0,0,255);
+    fill(player1.fillColor);
     noStroke();
-    ellipse(500, 100, 20,20);
-    ellipse(700, 350, 20,20);
-    
+    ellipse(player1.x, player1.y, player1.size, player1.size);
+    ellipse(player2.x, player2.y, player2.size, player2.size);
     pop();
 }
 function drawBall(){
@@ -147,9 +162,20 @@ function drawBall(){
     fill(255,0,0);
     noStroke();
     circle(ball.x, ball.y, ball.size);
-    ball.y = ball.y + 3;
-    ball.y = constrain(ball.y, 110, 340);
-    ball.x = ball.x + 2.5;
-    ball.x = constrain(ball.x, 510, 700);
     pop();
+    }
+    
+
+function moveBall(){
+    //let distance = dist(player1.x, player1.y, ball.x, ball.y);
+    console.log(distance)
+    ball.x = ball.x + ball.speedX;
+    ball.y = ball.y + ball.speedY;
+    if (ball.x >= player2.x + player2.size/2){
+        ball.x = ball.x - ball.speedX;
+        //ball.x = constrain(ball.x, 600, 685);
+        ball.y = ball.y - ball.speedY;
+        //ball.y = constrain(ball.y, 110, 340);
+    }
+
 }
