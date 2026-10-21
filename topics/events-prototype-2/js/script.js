@@ -1,8 +1,8 @@
 /**
- * soccer field conditionals 02 shoot the ball
+ * soccer field events 02 shoot the ball
  * Runzhuo Zhang
  * 
- * conditionals 02 homework
+ * events 02 homework
  */
 
 "use strict";
@@ -21,12 +21,12 @@ let lighterGrass = {
     B: 150
 }
 let ball = {
-    x: 780,
-    y: 350,
+    x: 720,
+    y: 300,
     size: 10,
-    speedX: 5,
-    speedY: -2,
-    moving: false
+    speedX: 0,
+    speedY: 0,
+    //moving: false
 }
 let player1 = {
     x: 600,
@@ -35,12 +35,12 @@ let player1 = {
     fillColor: "#0000ff"
 }
 let player2 = {
-    x: 710,
-    y: 350,
+    x: 670,
+    y: 320,
     size: 20,
     fillColor: "#0000ff",
-    speedX: 1,
-    speedY: 1
+    speedX: 0,
+    speedY: 0
 }
 function setup() {
 createCanvas(900, 604);
@@ -170,39 +170,63 @@ function drawBall(){
     pop();
     }
     
+
+//moving animations
 function movePlayer2(){
-    
-    if (player2.x >= 800){
-        player2.speedX = 0;
-    }
-    else{
-        player2.x = player2.x + player2.speedX;
+    player2.x = player2.x + player2.speedX;
+    player2.y = player2.y + player2.speedY;
     }
 
-}
 function moveBall(){
-    //let distance = dist(player1.x, player1.y, ball.x, ball.y);
+    let distance = dist(player2.x, player2.y, ball.x, ball.y);
     //console.log(ball.x)
-    //ball.x = ball.x + ball.speedX;
-    //ball.y = ball.y + ball.speedY;
-    if (player2.x >= ball.x ){
-        if(ball.moving === false){
-            ball.moving = true;
-            ball.speedX = 5;
-            ball.speedY = -2;
-            
-        }
-    else if (ball.moving === false){
-        ball.speedX = 0;
-        ball.speedY = 0;
-    }
-    }
-        console.log(ball.y)
-    if (ball.moving === true){    
-        ball.x = ball.x + ball.speedX;
+    ball.x = ball.x + ball.speedX;
+    ball.y = ball.y + ball.speedY;
+    if (distance < player2.size/2 + ball.size/2){
+        if(player2.x <= ball.x)
+        {ball.x = ball.x + 1}
+        if(player2.x >= ball.x)
+        {ball.x = ball.x - 1}
+        if(player2.y <= ball.y)
+        {ball.y = ball.y + 1}
+        if(player2.y >= ball.y)
+        {ball.y = ball.y - 1}
         ball.x = constrain(ball.x, 600, width-20);
-        ball.y = ball.y + ball.speedY;
-        ball.y = constrain(ball.y, 310, 604);
+            
     }
+}
     
+
+function keyPressed(event){
+    if (event.key === 'ArrowUp'){
+        player2.speedY = -0.5;
+    }
+    if (event.key === 'ArrowDown'){
+        player2.speedY = 0.5;
+    }
+    if (event.key === 'ArrowLeft'){
+        player2.speedX = -0.5;
+    }
+    if (event.key === 'ArrowRight'){
+        player2.speedX = 0.5;
+    }
+    if (event.key === 'a' && dist(player2.x, player2.y, ball.x, ball.y) < player2.size/2 + ball.size/2){
+        ball.speedX = 5;
+        //add a random to show the shot can be wide sometimes
+        ball.speedY = random(-3, 3);
+    }
+}
+function keyReleased(event){
+    if (event.key === 'ArrowUp'){
+        player2.speedY = 0;
+    }
+    if (event.key === 'ArrowDown'){
+        player2.speedY = 0;
+    }
+    if (event.key === 'ArrowLeft'){
+        player2.speedX = 0;
+    }
+    if (event.key === 'ArrowRight'){
+        player2.speedX = 0;
+    }
 }
