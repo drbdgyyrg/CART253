@@ -37,7 +37,9 @@ let player2 = {
     x: 685,
     y: 350,
     size: 20,
-    fillColor: "#0000ff"
+    fillColor: "#0000ff",
+    speedX:0,
+    speedY:0
 }
 function setup() {
 createCanvas(900, 604);
@@ -68,6 +70,8 @@ background(200);
     drawBall();
 //move the ball
     moveBall();
+//move player2
+    movePlayer2();
 }
 function drawSpots(){
     push();
@@ -170,29 +174,47 @@ function moveBall(){
     let distance = dist(player1.x, player1.y, ball.x, ball.y);
     let distance2 = dist(player2.x, player2.y, ball.x, ball.y);
     console.log(distance, distance2);
-    //reach player2
-    if (distance2 <= player2.size/4){
-        ball.speedX = ball.speedX*-1;
-        ball.speedY = ball.speedY*-1;
-        // ball.x = ball.x - ball.speedX;
-        // ball.speedX = -ball.speedX;
-        // //ball.x = constrain(ball.x, 600, 685);
-        // ball.y = ball.y - ball.speedY;
-        // ball.speedY = -ball.speedY;
-        // //ball.y = constrain(ball.y, 110, 340);
-    }
+ 
     //reach player1
-    else if (distance <= player1.size/4){
-        ball.speedX = ball.speedX*-1;
+    if (distance <= player1.size/4){
+        //add a randomness for playable result
+        ball.speedX = ball.speedX*-1+random(-0.1,0.1);
         ball.speedY = ball.speedY*-1;
-        // ball.x = ball.x + ball.speedX;
-        // ball.speedX = ball.speedX;
-        // ball.y = ball.y + ball.speedY;
-        // ball.speedY = ball.speedY;
+  
     }
-    else {
-        
-    }
-ball.x = ball.x + ball.speedX;
+   
+        ball.x = ball.x + ball.speedX;
         ball.y = ball.y + ball.speedY;
+}
+
+function movePlayer2(){
+    player2.x = player2.x + player2.speedX;
+    player2.y = player2.y + player2.speedY;
+    }
+function keyPressed(event){
+    if (event.key === 'ArrowUp'){
+        player2.speedY = -0.5;
+    }
+    else if (event.key === 'ArrowDown'){
+        player2.speedY = 0.5;
+    }
+    else if (event.key === 'ArrowLeft'){
+        player2.speedX = -0.5;
+    }
+    else if (event.key === 'ArrowRight'){
+        player2.speedX = 0.5;
+    }
+    //to receive the ball and pass it back to player1
+    if (event.key === 's' && dist(player2.x, player2.y, ball.x, ball.y) < player2.size/2 + ball.size/2){
+        ball.speedX = -1;
+        ball.speedY = -3;
+    }
+}
+function keyReleased(event){
+    if (event.key === 'ArrowUp' || event.key === 'ArrowDown'){
+        player2.speedY = 0;
+    }
+    else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight'){
+        player2.speedX = 0;
+    }
 }
