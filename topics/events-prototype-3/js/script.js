@@ -1,8 +1,8 @@
 /**
- * soccer field conditionals 03 cornerKick
+ * soccer field events 03 cornerKick
  * Runzhuo Zhang
  * 
- * conditionals 03 homework
+ * events 03 homework
  */
 
 "use strict";
@@ -24,9 +24,9 @@ let ball = {
     x: 870,
     y: 30,
     size: 10,
-    speedX: 0.6,
-    speedY: 3.5,
-    moveTorwardsGoal: false,
+    speedX: 0,
+    speedY: 0,
+    //moveTorwardsGoal: false,
 }
 let player1 = {
     x: 880,
@@ -39,7 +39,8 @@ let player2 = {
     y: 305,
     size: 20,
     fillColor: "#0000ff",
-    speedX: 0.3
+    speedX: 0,
+    speedY: 0
 }
 function setup() {
 createCanvas(900, 604);
@@ -73,6 +74,10 @@ background(200);
 //move the player2
     movePlayer2();
 }
+
+
+
+//drawing the lines and arcs on the soccer field
 function drawSpots(){
     push();
     fill(255);
@@ -153,6 +158,7 @@ function drawDarkGreenGrass(){
     //rect(32,357,836,109);
     pop();
 }
+//adding players and ball
 function drawPlayers(){
     push();
     fill(player1.fillColor);
@@ -169,41 +175,75 @@ function drawBall(){
     pop();
     }
     
-function movePlayer2(){
-    let distance = dist(player2.x, player2.y, ball.x, ball.y);
+//move players and ball
+// function movePlayer2(){
+//     let distance = dist(player2.x, player2.y, ball.x, ball.y);
 
-    player2.x = player2.x + player2.speedX;
-    if (distance < 10){
-        player2.speedX = 0;
-    }
+//     player2.x = player2.x + player2.speedX;
+//     if (distance < 10){
+//         player2.speedX = 0;
+//     }
     
 
-}
+// }
+// function moveBall(){
+//     let distance = dist(player2.x, player2.y, ball.x, ball.y);
+//     //console.log(distance)
+
+//     if (ball.moveTorwardsGoal === false){
+//         if (distance < 10){
+//             ball.moveTorwardsGoal = true;
+//         ball.x = ball.x + 20;
+//         ball.speedY = 0
+//     }
+    
+//     else{
+//     ball.x = ball.x - ball.speedX;
+//     ball.y = ball.y + ball.speedY;    
+//     }
+
+//     }
+//     if (ball.moveTorwardsGoal === true){
+//         ball.x = ball.x + 20;
+//         ball.x = constrain(ball.x, 0, width-20);
+
+//     }   
+// }
 function moveBall(){
     let distance = dist(player2.x, player2.y, ball.x, ball.y);
-    //console.log(distance)
-    //ball.x = ball.x - ball.speedX;
-    //ball.y = ball.y + ball.speedY;
-    if (ball.moveTorwardsGoal === false){
-        if (distance < 10){
-            ball.moveTorwardsGoal = true;
-        ball.x = ball.x + 20;
-        //ball.speedX = 1
-        ball.speedY = 0
+    ball.x = ball.x + ball.speedX;
+    ball.y = ball.y + ball.speedY;
+    ball.x = constrain(ball.x, 20, width-20);
+    ball.y = constrain(ball.y, 20, height-20);
+}
+function movePlayer2(){
+    player2.x = player2.x + player2.speedX;
+    player2.y = player2.y + player2.speedY;
+}
+function keyPressed(event) {
+    if (event.key === 'd'){
+        ball.speedX = random(-0.7, -0.5);
+        ball.speedY = 3.5;
     }
-    
-    else{
-    ball.x = ball.x - ball.speedX;
-    ball.y = ball.y + ball.speedY;    
+    if (event.key === 'ArrowRight'){
+        player2.speedX = 0.3;
+    }
+    if (event.key === 'ArrowLeft'){
+        player2.speedX = -0.3;
+    }
+    if (event.key === 'ArrowUp'){
+        player2.speedY = -0.3;
+    }
+    if (event.key === 'ArrowDown'){
+        player2.speedY = 0.3;
+    }
+    if (event.key === 'a' && dist(player2.x, player2.y, ball.x, ball.y) < 10){
+        ball.speedX = 10;
+        ball.speedY = 0;
     }
 
-    }
-    if (ball.moveTorwardsGoal === true){
-        ball.x = ball.x + 20;
-        ball.x = constrain(ball.x, 0, width-20);
-
-    }   
-
-    
-
+}
+function keyReleased() {
+    player2.speedX = 0;
+    player2.speedY = 0;
 }
