@@ -24,7 +24,7 @@ let ball = {
     x: 870,
     y: 30,
     size: 10,
-    speedX: -0.6,
+    speedX: 0.6,
     speedY: 3.5,
     moveTorwardsGoal: false,
 }
