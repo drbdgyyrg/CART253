@@ -21,3 +21,6 @@ Homework
 
 6. Prototyping: Conditionals
    [Reflective Journal](./journal_conditionals_prototype.md)
+
+7. Prototyping: Events
+   [Reflective Journal](./journal_events_prototype.md)
