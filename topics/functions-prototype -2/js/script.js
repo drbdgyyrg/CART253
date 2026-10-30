@@ -1,8 +1,10 @@
 
 "use strict";
-
+let angle = 0;
 function setup() {
-    createCanvas(800,400)
+    createCanvas(2500,2500);
+    //rotate base on degrees
+    angleMode(DEGREES);
 
 }
 
@@ -10,14 +12,18 @@ function setup() {
 
 function draw() {
     background('#180e4e');
-    //big dipper
-    star(50,180,27);
-    star(100,300,26);
-    star(260,280,24);
-    star(260,140,30);
-    star(420,120,25);
-    star(570,100,28);
-    star(700,130,26);
+    //big dipper rotate alongside the North Star
+    push();
+    //relocate the origin of the rotation
+    translate(1250,1250);
+    //apply the rotation
+    rotate(angle);
+    //adding objects
+    bigDipper();
+    pop();
+    //adding rotation animation
+    angle += 0.5;
+
 
 }
 function star(x,y,size){
@@ -38,5 +44,17 @@ function star(x,y,size){
     pop();
     return;
 
+}
+function bigDipper(){
+    push();
+    star(50,1040,27);
+    star(100,1160,26);
+    star(260,1140,24);
+    star(260,1000,30);
+    star(420,980,25);
+    star(570,960,28);
+    star(700,990,26);
+    pop();
+    return;
 }
 console = console.log();
