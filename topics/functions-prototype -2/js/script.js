@@ -23,6 +23,8 @@ function draw() {
     pop();
     //adding rotation animation
     angle += 0.5;
+    //adding NorthStar
+    star(1250, height/2,40);
 
 
 }
@@ -47,14 +49,32 @@ function star(x,y,size){
 }
 function bigDipper(){
     push();
-    star(50,1040,27);
-    star(100,1160,26);
-    star(260,1140,24);
-    star(260,1000,30);
-    star(420,980,25);
-    star(570,960,28);
-    star(700,990,26);
+    star(50,1040,22);
+    star(100,1160,21);
+    star(260,1140,19);
+    star(260,1000,25);
+    star(420,980,20);
+    star(570,960,23);
+    star(700,990,21);
     pop();
     return;
 }
+// function northStar (x,y,size){
+//     push();
+//     fill('#ffee35a9');
+//     noStroke();
+//     circle(x,y,size);
+//     fill('#fff261b1');
+//     noStroke();
+//     circle(x,y,size-5);
+//     fill('#fff895d8');
+//     noStroke();
+//     circle(x,y,size-10);
+//     fill('#ffffd7f1');
+//     noStroke();
+//     circle(x,y,size-15);
+//     pop();
+//     return;
+
+// }
 console = console.log();
