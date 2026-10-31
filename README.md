@@ -24,3 +24,6 @@ Homework
 
 7. Prototyping: Events
    [Reflective Journal](./journal_events_prototype.md)
+
+8. Prototyping: Functions
+   [Reflective Journal](.journal_functions_prototype.md)

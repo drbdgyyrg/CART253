@@ -2,20 +2,20 @@
 
 Runzhuo Zhang
 
-[Prototype 01 link](https://drbdgyyrg.github.io/CART253/topics/events-prototype-1/)
+[Prototype 01 link](https://drbdgyyrg.github.io/CART253/topics/functions-prototype-1/)
 
-[Prototype 02 link](https://drbdgyyrg.github.io/CART253/topics/events-prototype-2/)
+[Prototype 02 link](https://drbdgyyrg.github.io/CART253/topics/functions-prototype-2/)
 
-[Prototype 03 link](https://drbdgyyrg.github.io/CART253/topics/events-prototype-3/)
+[Prototype 03 link](https://drbdgyyrg.github.io/CART253/topics/functions-prototype-3/)
 
-## Reflective Journal & Game Instructions
+## Reflective Journal 
 
-I developed three mini-games utilizing keyboard events.
+Generally, I think this week's homework is the hardest. Since the functions instruction is kind of confusing, it is hard to decide what to do for homeworks. I really deem the course should move functions instruction to earlier weeks at least before the conditions instruction.
 
-**Prototype 01:** The player uses the **arrow keys** to control Player 2. When a pass from Player 1 comes within a certain threshold (the radius of the player's collision circle), the player must press the **S** key to return the pass; otherwise, the ball passes right through them. I introduced slight variance to Player 1's passing direction to force the user to actively move and intercept the ball.
+**Prototype 01:** I created a big dipper star group by using functions. Each star contains a gradient in color. I use function to verify the position and size of each star.
 
-**Prototype 02:** This prototype features a basic dribbling and shooting mechanic. The player navigates using the **arrow keys** and automatically begins dribbling upon contacting the ball. If the player is within range of the ball and the **A** key is pressed, they will shoot toward the right side. I added random deviation along the Y-axis to simulate off-target shots going wide.
+**Prototype 02:** I had an idea to rotate the big dipper using the north star as an axis. I created a function to group the big dipper, and then researched online to learn how to rotate it. The canvas is kind of **large**, so please **shrink** it if you cannot see the big dipper animation.
 
-**Prototype 03:** This is a corner kick simulation. Pressing the **D** key initiates the corner kick, allowing the player to reposition using the **arrow keys** to intercept the cross. Upon contact, pressing the **A** key strikes the ball into the back of the net. While I included minor random variance in the kick's initial direction, adding randomness along the Y-axis to vary the speed could improve the mechanic. Implementing an automated goalkeeper with randomized movement patterns would also heighten the game's difficulty. Though I opted for a simpler scope for this project, I plan to integrate these complex elements into future iterations.
+**Prototype 03:** This is a continuation for my soccer project. I use functions to build up two soccer teams and to put the players into the right position. The team blue plays 3-5-2 formation and the team yellow plays 4-2-3-1 formation. Moreover, I plan to use arrays to work further on these teams and create animations on them.
 
-![screenshot](https://drbdgyyrg.github.io/CART253/topics/conditionals-prototype-3/Screenshot_cornerKick.jpg)
+![screenshot](https://drbdgyyrg.github.io/CART253/topics/functions-prototype-3/Screenshot_function3.jpg)
