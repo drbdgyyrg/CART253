@@ -21,8 +21,8 @@ let lighterGrass = {
     B: 150
 }
 let ball = {
-    x: 870,
-    y: 30,
+    x: 450,
+    y: 302,
     size: 10,
     speedX: 0,
     speedY: 0,
@@ -38,7 +38,7 @@ let player2 = {
     x: 790,
     y: 305,
     size: 20,
-    fillColor: "#fffb00",
+    fillColor: "#f1e900",
     speedX: 0,
     speedY: 0
 }
@@ -65,7 +65,8 @@ background(200);
     drawCircle();
     drawLines();
     drawSpots();
-    drawPlayers();
+    teamBlue();
+    teamYellow();
     drawBall();
 
 }
@@ -153,16 +154,60 @@ function drawDarkGreenGrass(){
     pop();
 }
 //adding players and ball
-function bluePlayers(player1x,player1y,player1size){
+function bluePlayer(player1x,player1y,player1size){
     push();
     fill(player1.fillColor);
     noStroke();
     circle(player1x, player1y, player1size);
     
     pop();
+    return;
 }
-function teamBlue(x,y,size){
+function teamBlue(){
+    //keeper
+    bluePlayer(40,302,20);
+    //defender
+    bluePlayer(150,170,20);
+    bluePlayer(130,302,20);
+    bluePlayer(150,425,20);
+    //midfielder
+    bluePlayer(230,230,20);
+    bluePlayer(230,370,20);
+    bluePlayer(330,302,20);
+    bluePlayer(290,100,20);
+    bluePlayer(290,504,20);
+    //forward
+    bluePlayer(420,220,20);
+    bluePlayer(420,384,20);
+    return;
 
+}
+function yellowPlayer(player2x,player2y,player2size){
+    push();
+    fill(player2.fillColor);
+    noStroke();
+    circle(player2x, player2y, player2size);
+    
+    pop();
+    return;
+}
+function teamYellow(){
+    //keeper
+    yellowPlayer(860,302,20);
+    //defender
+    yellowPlayer(790,240,20);
+    yellowPlayer(790,364,20);
+    yellowPlayer(760,490,20);
+    yellowPlayer(760,110,20);
+    //midfielder
+    yellowPlayer(680,220,20);
+    yellowPlayer(680,384,20);
+    yellowPlayer(600,302,20);
+    yellowPlayer(560,470,20);
+    yellowPlayer(560,130,20);
+    //forward
+    yellowPlayer(480,302,20);
+    return;
 }
 function drawBall(){
     push();
