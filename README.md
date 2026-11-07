@@ -27,3 +27,6 @@ Homework
 
 8. Prototyping: Functions
    [Reflective Journal](./journal_functions_prototype.md)
+
+9. Prototyping: Arrays
+    [Reflective Journal](./journal_arrays_prototype.md)
