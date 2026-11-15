@@ -32,7 +32,9 @@ let player1 = {
     x: 880,
     y: 25,
     size: 20,
-    fillColor: "#0000ff"
+    fillColor: "#0000ff",
+    speedX:0,
+    speedY:0
 }
 let player2 = {
     x: 790,
@@ -42,10 +44,12 @@ let player2 = {
     speedX: 0,
     speedY: 0
 }
+let teamBlue = [];
 function setup() {
 createCanvas(900, 604);
+buildTeamBlue();
 }
-
+let gameStart = false;
 
 /**
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
@@ -65,7 +69,7 @@ background(200);
     drawCircle();
     drawLines();
     drawSpots();
-    teamBlue();
+    drawTeamBlue();
     teamYellow();
     drawBall();
 
@@ -154,33 +158,57 @@ function drawDarkGreenGrass(){
     pop();
 }
 //adding players and ball
-function bluePlayer(player1x,player1y,player1size){
-    push();
-    fill(player1.fillColor);
-    noStroke();
-    circle(player1x, player1y, player1size);
+function bluePlayer(player1x,player1y,player1size,speedX,speedY){
+    let newPlayer = {
+    x: player1x,
+    y: player1y,
+    size: player1size,
+    fillColor: "#0000ff",
+    speedX:speedX,
+    speedY:speedY
+    }
+    // push();
+    // fill(player1.fillColor);
+    // noStroke();
+    // circle(player1x, player1y, player1size);
     
-    pop();
+    // pop();
+    teamBlue.push(newPlayer);
     return;
 }
-function teamBlue(){
+function buildTeamBlue(){
     //keeper
-    bluePlayer(40,302,20);
+    bluePlayer(40,302,20,0,0);
     //defender
-    bluePlayer(150,170,20);
-    bluePlayer(130,302,20);
-    bluePlayer(150,425,20);
+    bluePlayer(150,170,20,1,0);
+    bluePlayer(130,302,20,1,0);
+    bluePlayer(150,425,20,1,0);
     //midfielder
-    bluePlayer(230,230,20);
-    bluePlayer(230,370,20);
-    bluePlayer(330,302,20);
-    bluePlayer(290,100,20);
-    bluePlayer(290,504,20);
+    bluePlayer(230,230,20,2,0);
+    bluePlayer(230,370,20,2,0);
+    bluePlayer(330,302,20,2,0);
+    bluePlayer(290,100,20,2,0);
+    bluePlayer(290,504,20,2,0);
     //forward
-    bluePlayer(420,220,20);
-    bluePlayer(420,384,20);
+    bluePlayer(420,220,20,3,0);
+    bluePlayer(420,384,20,3,0);
     return;
 
+}
+function drawTeamBlue(){
+    for (let i = 0; i < teamBlue.length; i++){
+        if (gameStart === true){
+            teamBlue[i].x = teamBlue[i].x + teamBlue[i].speedX
+
+        }
+        
+         push();
+    fill(teamBlue[i].fillColor);
+    noStroke();
+    circle(teamBlue[i].x, teamBlue[i].y, teamBlue[i].size);
+    
+    pop();
+    }
 }
 function yellowPlayer(player2x,player2y,player2size){
     push();
@@ -217,3 +245,6 @@ function drawBall(){
     pop();
     }
     
+function mousePressed(){
+    gameStart = true;
+}
