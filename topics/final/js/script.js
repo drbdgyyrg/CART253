@@ -205,12 +205,7 @@ function bluePlayer(player1x,player1y,player1size,player1speedX,player1speedY,pl
     speedY:player1speedY,
     number:player1number,
     }
-    // push();
-    // fill(player1.fillColor);
-    // noStroke();
-    // circle(player1x, player1y, player1size);
-    
-    // pop();
+  
     teamBlue.push(newBluePlayer);
     return;
 }
@@ -266,12 +261,7 @@ function redPlayer(player2x,player2y,player2size,player2speedX,player2speedY,pla
 
     }
     teamRed.push(newRedPlayer);
-    // push();
-    // fill(player2.fillColor);
-    // noStroke();
-    // circle(player2x, player2y, player2size);
-    
-    // pop();
+   
     return;
 }
 function buildTeamRed(){
