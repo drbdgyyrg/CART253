@@ -155,10 +155,6 @@ function drawLines(){
 function drawDarkGreenGrass(){
     push();
     fill(darkerGrass.R, darkerGrass.G, darkerGrass.B);
-    //turn the color of the grass darker and yellower
-    //darkerGrass.R = darkerGrass.R + 1;
-    //darkerGrass.R = constrain(darkerGrass.R, 113, 188);
-    //darkerGrass.B = darkerGrass.B - 0.2;
     darkerGrass.B = constrain(darkerGrass.B, 114, 130);
     noStroke();
     rect(56,32, 50.25, 540);
